@@ -1,0 +1,16 @@
+$theme-colors: (
+  "primary": #0074d9,
+  "success": #33691e,
+  "danger": #ff4136,
+  "warning": #ffab00
+);
+
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  padding-top: 100px;
+}
+
+.modal-form{
+  width: 400px
+}
