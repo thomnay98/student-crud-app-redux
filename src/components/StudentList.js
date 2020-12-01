@@ -7,7 +7,6 @@ import ModalForm from './ModalForm';
 const StudentList = () => {
 
     const students = useSelector(state => state.students.students);
-    console.log(students);
     const [show, setShow] = useState(false);
     const [tempId, setTempId] = useState("");
 
@@ -16,8 +15,8 @@ const StudentList = () => {
     const getTempID = (id) => setTempId(id)
 
     return (
-        <>
-            <table className="table shadow">
+        <section className="table-responsive">
+            <table className="table border table-striped table-hover">
                 <thead className="bg-primary text-light">
                     <tr>
                         <th>MSSV</th>
@@ -37,7 +36,7 @@ const StudentList = () => {
                 </tbody>
             </table>
             <ModalForm show={show} handleClose={handleClose} title={"Cập nhật sinh viên"} tempId={tempId} />
-        </>
+        </section>
     )
 }
 

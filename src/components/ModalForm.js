@@ -18,7 +18,6 @@ const ModalForm = ({show, handleClose, title, tempId}) => {
 
     const dispatch = useDispatch();
     const students  = useSelector((state) => state.students.students);
-    console.log(students);
 
     const [id, setID] = useState("");
     const [name, setName] = useState("");
@@ -67,45 +66,6 @@ const ModalForm = ({show, handleClose, title, tempId}) => {
         };
         dispatch(updateStudent(new_student));
     };
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     const form = e.currentTarget;
-    //     if (form.checkValidity() === false) {
-    //         e.stopPropagation();
-            
-    //     }else{
-    //         setValidated(false);
-    //         const new_student = {
-    //             id: id,
-    //             name: name,
-    //             email: email,
-    //             grade: grade,
-    //             gpa: gpa
-    //         };
-    //         if(tempId){
-    //             dispatch(updateStudent(new_student));
-    //             handleClose();
-    //             setID("");
-    //             setName("");
-    //             setEmail("");
-    //             setGrade("");
-    //             setGPA("");
-    //         }else{
-    //             if(checkExistValue(students, id, email)){
-    //                 dispatch(addStudent(new_student));
-    //                 handleClose();
-    //                 setID("");
-    //                 setName("");
-    //                 setEmail("");
-    //                 setGrade("");
-    //                 setGPA("");
-    //             }
-    //         }
-    //     }
-        
-    //     setValidated(true);
-    // };
 
     useEffect(() => {
         if(tempId && students){
